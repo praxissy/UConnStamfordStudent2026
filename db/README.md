@@ -21,3 +21,9 @@ To start over: `psql -d showcase_dev -f db/drop_all.sql`, then load again.
 
 Inside `psql`: `\dt` lists tables, `\dT` lists the enum types, and
 `\d work_items` shows one table's columns, constraints, indexes, and triggers.
+
+---
+
+## Question for Drew
+- Which person-table is the student, and which is the reviewer? 
+- Does a work item need a sponsor? 

@@ -1,9 +1,12 @@
 -- Every time a student submits, a new review_rounds row is created. Old rounds
 -- are never deleted, so a reviewer can see "this was already flagged last time."
+--
+-- Together these three replace portfolio_feedback with the round-based,
+-- all-must-accept model.
 
 CREATE TABLE review_rounds (
-    id            bigint         GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    work_item_id  bigint         NOT NULL REFERENCES work_items (id) ON DELETE CASCADE,
+    id            int            GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    work_item_id  int            NOT NULL REFERENCES work_items (id) ON DELETE CASCADE,
     round_number  int            NOT NULL,  -- 1, 2, 3, ...
 
     -- Rollup of this round's reviewer verdicts: accepted once every reviewer
@@ -20,10 +23,10 @@ CREATE TABLE review_rounds (
 );
 
 CREATE TABLE work_item_reviews (
-    id                  bigint         GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    review_round_id     bigint         NOT NULL,
-    work_item_id        bigint         NOT NULL,
-    reviewer_id         bigint         NOT NULL REFERENCES users (id) ON DELETE RESTRICT,
+    id                  int            GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    review_round_id     int            NOT NULL,
+    work_item_id        int            NOT NULL,
+    reviewer_id         int            NOT NULL REFERENCES users (id) ON DELETE RESTRICT,
     status              review_status  NOT NULL DEFAULT 'pending',
     allowed_visibility  visibility     NULL,
     assigned_at         timestamptz    NOT NULL DEFAULT now(),
@@ -50,21 +53,20 @@ CREATE INDEX work_item_reviews_work_item_id_idx
     ON work_item_reviews (work_item_id);
 
 
-
--- -----------------------------------------------------------------------------
 -- review_comments -- field-level, Word-style feedback
--- -----------------------------------------------------------------------------
 -- Anchored to what the comment is about, so the front end can render a card
 -- naming the field, the reviewer, and the note:
 --     Description -- "Too much sensitive information." -- J. Reviewer
 
 CREATE TABLE review_comments (
-    id                   bigint          GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    work_item_review_id  bigint          NOT NULL,
-    work_item_id         bigint          NOT NULL,
+    id                   int             GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    work_item_review_id  int             NOT NULL,
+    work_item_id         int             NOT NULL,
     target_field         comment_target  NOT NULL,
-    target_id            bigint          NULL,
+    target_id            int             NULL,
     body                 text            NOT NULL,
+    -- Absorbed from portfolio_feedback.resolved: mark one comment addressed.
+    resolved             bool            NOT NULL DEFAULT false,
     created_at           timestamptz     NOT NULL DEFAULT now(),
 
     CONSTRAINT review_comments_review_work_item_fk
