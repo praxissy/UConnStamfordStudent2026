@@ -1,0 +1,58 @@
+import type { Student } from '@/types'
+
+export const STUDENTS: Student[] = [
+  {
+    id: 's1', initials: 'AO', name: 'Amara Osei', partnered: true,
+    university: 'University of Bridgeport',
+    image: 'https://images.unsplash.com/photo-1766297248160-87aca6fa59ef?auto=format&fit=crop&w=1200&q=85',
+    tags: ['Materials Science', 'PhD'],
+    desc: 'Third-year doctoral researcher specialising in nanocomposite coatings. Co-lead on two active industry projects.',
+    highlights: ['SEM & TEM imaging analysis', 'Nanocoating synthesis & characterisation', 'Industry project co-lead (MedTech Solutions)', 'Published 2 peer-reviewed papers'],
+    tech: ['Python', 'MATLAB', 'ImageJ'],
+  },
+  {
+    id: 's2', initials: 'PM', name: 'Priya Mehta', partnered: true,
+    university: 'University of Bridgeport',
+    image: 'https://images.unsplash.com/photo-1766297246931-7b861269dab0?auto=format&fit=crop&w=1200&q=85',
+    tags: ['Bioengineering', 'PhD'],
+    desc: 'Fourth-year researcher focused on vascular tissue engineering. Active partner on two MedTech Solutions projects.',
+    highlights: ['Tissue scaffold fabrication', 'Cell culture & bioreactor operation', 'Clinical partner liaison', 'Bioreactor scale-up studies'],
+    tech: ['LabVIEW', 'MATLAB', 'Python'],
+  },
+  {
+    id: 's3', initials: 'SR', name: 'Sofia Reyes', partnered: true,
+    university: 'UC Berkeley',
+    image: 'https://images.unsplash.com/photo-1766297248047-6ec337099802?auto=format&fit=crop&w=1200&q=85',
+    tags: ['Physics', 'PhD'],
+    desc: 'Second-year photonics researcher working on laser-enhanced solar coating durability with SolarTech Ltd.',
+    highlights: ['Pulsed laser system operation', 'Optical characterisation methods', 'Industry partner: SolarTech Ltd.', 'Signal processing & data analysis'],
+    tech: ['LabVIEW', 'Python', 'Zemax'],
+  },
+  {
+    id: 's4', initials: 'LF', name: 'Lucas Ferreira', partnered: false,
+    university: 'MIT',
+    image: 'https://images.unsplash.com/photo-1775519520494-d12d91797a01?auto=format&fit=crop&w=1200&q=85',
+    tags: ['Mechanical Eng.', 'MEng'],
+    desc: 'Second-year master\'s student specialising in fuel cell efficiency optimisation and thermodynamic modelling.',
+    highlights: ['Finite element analysis (FEA)', 'CAD/CAM design & simulation', 'Fuel cell testing rigs', 'Thermal management systems'],
+    tech: ['ANSYS', 'SolidWorks', 'MATLAB'],
+  },
+  {
+    id: 's5', initials: 'YT', name: 'Yuki Tanaka', partnered: false,
+    university: 'Carnegie Mellon University',
+    image: 'https://images.unsplash.com/photo-1766297247924-6638d54e7c89?auto=format&fit=crop&w=1200&q=85',
+    tags: ['Computer Science', 'MSc'],
+    desc: 'First-year MSc student building AI-assisted scheduling tools for shared research infrastructure.',
+    highlights: ['Machine learning & AI integration', 'Full-stack React development', 'Human-computer interaction research', 'Open-source contributor'],
+    tech: ['React', 'Python', 'TensorFlow'],
+  },
+  {
+    id: 's6', initials: 'JT', name: 'James Thornton', partnered: false,
+    university: 'Johns Hopkins University',
+    image: 'https://images.unsplash.com/photo-1758685848208-e108b6af94cc?auto=format&fit=crop&w=1200&q=85',
+    tags: ['Civil Engineering', 'MEng'],
+    desc: 'Third-year MEng student focused on seismic resilience testing of high-rise structural systems.',
+    highlights: ['6-DOF shake table operation', 'Structural analysis & simulation', 'Seismic risk modelling', 'Field instrumentation'],
+    tech: ['MATLAB', 'SAP2000', 'Python'],
+  },
+]

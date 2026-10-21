@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import 'tailwindcss';
+
+/* ─── Design tokens ───────────────────────────────────────────────────────────
+   The single source of truth for colour. Taken from the Student Portfolio
+   Search feature, which is the agreed visual direction for the whole app.
+
+   Use these as utilities — bg-navy, text-gold, border-line — never a raw hex.
+   Both original Figma exports hardcoded their colours inline, which is how they
+   drifted apart in the first place.
+   ────────────────────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Brand */
+  --color-navy: #0d1e3b;
+  --color-navy-mid: #112240;
+  --color-navy-deep: #091628;
+  --color-gold: #c9972d;
+  --color-gold-dark: #b8882a;
+  --color-gold-deep: #9b6f18;
+
+  /* Surfaces */
+  --color-surface: #f4f5f7;
+  --color-surface-muted: #f0f2f5;
+  --color-surface-soft: #f8f9fb;
+
+  /* Lines */
+  --color-line: #e2e6ec;
+  --color-line-strong: #d8dde5;
+  --color-line-input: #d1d5db;
+
+  /* Text */
+  --color-ink: #0d1e3b;
+  --color-ink-soft: #374151;
+  --color-ink-muted: #4a5568;
+  --color-ink-faint: #6b7280;
+  --color-ink-ghost: #9ca3af;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #ffffff;
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Carried over from the dashboard export: thin scrollbars, soft transitions,
+   and a focus ring — recoloured gold to match. */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c4cdd8;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a0adb8;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  transition: all 0.15s ease;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(201 151 45 / 0.2);
+}

@@ -1,0 +1,58 @@
+import type { Lab } from '@/types'
+
+export const LABS: Lab[] = [
+  {
+    id: 'l1', initials: 'ML', name: 'AI & Machine Learning Lab',
+    university: 'University of Bridgeport',
+    image: 'https://images.unsplash.com/photo-1766297247924-6638d54e7c89?auto=format&fit=crop&w=1200&q=85',
+    tags: ['AI / ML', 'Data Science'],
+    desc: 'Specializing in NLP, computer vision, and predictive analytics. 15+ successful projects completed.',
+    capabilities: ['Natural Language Processing (NLP)', 'Computer vision & image recognition', 'Predictive analytics & forecasting', 'Recommendation systems', 'Automated model training pipelines'],
+    tech: ['Python', 'TensorFlow', 'PyTorch'],
+  },
+  {
+    id: 'l2', initials: 'HW', name: 'Hardware Engineering Lab',
+    university: 'University of Bridgeport',
+    image: 'https://images.unsplash.com/photo-1775519520494-d12d91797a01?auto=format&fit=crop&w=1200&q=85',
+    tags: ['Robotics', 'Hardware / IoT'],
+    desc: 'IoT devices, robotics, and embedded systems. Expert faculty supervision and state-of-the-art facilities.',
+    capabilities: ['Robotics design & programming', 'IoT sensor networks & firmware', 'Embedded systems & microcontrollers', 'PCB schematic and layout design', '3D printing & rapid prototyping'],
+    tech: ['C/C++', 'Arduino', 'ROS'],
+  },
+  {
+    id: 'l3', initials: 'WD', name: 'Web Development Lab',
+    university: 'UC Berkeley',
+    image: 'https://images.unsplash.com/photo-1758685848208-e108b6af94cc?auto=format&fit=crop&w=1200&q=85',
+    tags: ['Software / Web', 'Cloud'],
+    desc: 'Full-stack web applications, mobile apps, and cloud infrastructure. Modern tech stack expertise.',
+    capabilities: ['Full-stack web application development', 'Mobile app development (iOS & Android)', 'Cloud infrastructure & DevOps', 'RESTful API design and implementation', 'UI/UX prototyping & user testing'],
+    tech: ['React', 'Node.js', 'AWS'],
+  },
+  {
+    id: 'l4', initials: 'BM', name: 'Biomedical Engineering Lab',
+    university: 'Johns Hopkins University',
+    image: 'https://images.unsplash.com/photo-1766297246931-7b861269dab0?auto=format&fit=crop&w=1200&q=85',
+    tags: ['Biomedical', 'Research'],
+    desc: 'Tissue engineering, medical devices, and translational research with clinical partners.',
+    capabilities: ['Tissue scaffold fabrication', 'Medical device prototyping', 'Biocompatibility testing', 'Cell culture & imaging', 'FDA regulatory guidance'],
+    tech: ['MATLAB', 'LabVIEW', 'Python'],
+  },
+  {
+    id: 'l5', initials: 'CS', name: 'Cybersecurity Lab',
+    university: 'Carnegie Mellon University',
+    image: 'https://images.unsplash.com/photo-1766297248160-87aca6fa59ef?auto=format&fit=crop&w=1200&q=85',
+    tags: ['Security', 'Software'],
+    desc: 'Penetration testing, threat modeling, and secure system design for enterprise and government clients.',
+    capabilities: ['Penetration testing & red teaming', 'Threat modeling & risk assessment', 'Secure software development', 'Network forensics', 'Zero-trust architecture design'],
+    tech: ['Kali Linux', 'Wireshark', 'Python'],
+  },
+  {
+    id: 'l6', initials: 'EN', name: 'Energy Systems Lab',
+    university: 'MIT',
+    image: 'https://images.unsplash.com/photo-1766297248047-6ec337099802?auto=format&fit=crop&w=1200&q=85',
+    tags: ['Energy', 'Sustainability'],
+    desc: 'Renewable energy integration, fuel cell research, and grid-scale storage solutions.',
+    capabilities: ['Solar & wind energy modeling', 'Fuel cell development', 'Battery storage systems', 'Smart grid simulations', 'Carbon footprint analysis'],
+    tech: ['MATLAB', 'Simulink', 'Python'],
+  },
+]
