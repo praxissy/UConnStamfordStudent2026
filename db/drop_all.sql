@@ -11,6 +11,7 @@ DROP TABLE IF EXISTS portfolio_review_comments   CASCADE;
 DROP TABLE IF EXISTS portfolio_review_verdicts   CASCADE;
 DROP TABLE IF EXISTS portfolio_review_rounds     CASCADE;
 
+DROP TABLE IF EXISTS portfolio_work_item_highlights CASCADE;
 DROP TABLE IF EXISTS portfolio_work_item_tags    CASCADE;
 DROP TABLE IF EXISTS portfolio_work_item_images  CASCADE;
 DROP TABLE IF EXISTS portfolio_work_item_links   CASCADE;

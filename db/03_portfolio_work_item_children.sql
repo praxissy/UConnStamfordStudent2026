@@ -28,3 +28,15 @@ CREATE TABLE portfolio_work_item_tags (
 
     CONSTRAINT portfolio_work_item_tags_unique UNIQUE (work_item_id, tag)
 );
+
+
+-- The bullet list on the public detail page ("Adaptive difficulty based on
+-- real-time performance signals"). One bullet per row, in display order.
+CREATE TABLE portfolio_work_item_highlights (
+    id            int          GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    work_item_id  int          NOT NULL REFERENCES portfolio_work_items (id) ON DELETE CASCADE,
+    text          varchar(255) NOT NULL,
+    sort_order    int          NOT NULL DEFAULT 0
+);
+
+CREATE INDEX portfolio_work_item_highlights_work_item_idx ON portfolio_work_item_highlights (work_item_id);

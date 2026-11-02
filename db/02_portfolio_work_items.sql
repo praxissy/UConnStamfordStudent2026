@@ -12,6 +12,8 @@ CREATE TABLE portfolio_work_items (
     title               varchar(200)                NOT NULL,
     description         varchar(2000)               NOT NULL,
     deliverable_type    varchar(60)                 NULL,
+    parent_project      varchar(150)                NULL,
+    start_date          date                        NULL,
     completed_date      date                        NULL,
     rating              smallint                    NULL,
     status              portfolio_work_item_status  NOT NULL DEFAULT 'draft',

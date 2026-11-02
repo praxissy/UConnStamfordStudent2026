@@ -27,8 +27,21 @@ universities --< portfolio_work_items          university_id (varchar(20))
 labs         --< portfolio_work_items          lab_id       (nullable)
 partners     --< portfolio_work_items          sponsor_partner_id (nullable)
 
-portfolio_work_items --< links / images / tags
+portfolio_work_items --< links / images / tags / highlights
 portfolio_work_items --< portfolio_review_rounds
                             --< portfolio_review_verdicts   reviewer_user_id -> users
                                   --< portfolio_review_comments
 ```
+
+The backend in `../backend/` loads these same files into an embedded Postgres
+(PGlite), so you don't need psql to run the app.
+
+## Added for the frontend — for Drew
+
+The dashboard designs display three things the v3 handoff had no column for:
+
+- `portfolio_work_items.parent_project varchar(150)` — the larger effort a work
+  item belongs to. Free text; could become a FK to `projects`
+- `portfolio_work_items.start_date date` — the designs show a range, and the
+  schema only had `completed_date`
+- `portfolio_work_item_highlights` — the bullet list on the detail page
