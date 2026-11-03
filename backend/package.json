@@ -1,0 +1,24 @@
+{
+  "name": "praxissy-portfolio-api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "db:reset": "node -e \"require('fs').rmSync('.data',{recursive:true,force:true});console.log('database removed; it will be rebuilt on next start')\""
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.3.0",
+    "express": "^5.1.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
